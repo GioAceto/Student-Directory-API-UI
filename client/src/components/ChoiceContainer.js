@@ -1,30 +1,30 @@
 import React, { useState } from 'react'
 import { AddStudentForm, UpdateStudentForm, DeleteStudentForm } from '../forms'
 
-const ChoiceContainer = () => {
-  const [formResult, setFormResult] = useState(AddStudentForm)
+const RenderChoice = ({ formResult }) => {
+  if (formResult === 'update') return <UpdateStudentForm />
 
-  const handleFormChange = (event) => {
-    if (event.target.value === "update") {
-      setFormResult(UpdateStudentForm)
-    } else if (event.target.value === "delete") {
-      setFormResult(DeleteStudentForm)
-    } else if (event.target.value === "add") {
-      setFormResult(AddStudentForm)
-    }
-  }
+  if (formResult === 'delete') return <DeleteStudentForm />
+
+  if (formResult === 'add') return <AddStudentForm />
+
+  return <div />
+}
+
+const ChoiceContainer = () => {
+  const [formResult, setFormResult] = useState('add')
 
   return (
     <>
       <div className="choice-container">
         <label>I want to:</label>
-        <select id="select" onChange={handleFormChange}>
+        <select id="select" onChange={(event) => setFormResult(event.target.value)} value={formResult}>
           <option value="add">add a student</option>
           <option value="update">edit a student</option>
           <option value="delete">delete a student</option>
         </select>
       </div>
-      {formResult}
+      <RenderChoice formResult={formResult} />
     </>
   )
 }

@@ -1,27 +1,52 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
+import axios from 'axios'
 
 export const AddStudentForm = () => {
-  const [data, setData] = useState({
-    name: "",
-    age: "",
-    address: "",
-    gpa: "",
-    major: "",
-    image: ""
-  })
+  const formData = useRef(null)
 
-  const handleChange = (e) => {
-    const newData = { ...data }
-    newData[e.target.name] = e.target.value
-    setData(newData)
-    console.log(newData)
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    // Destructure current values from the ref
+    const { current } = formData
+    // Create a student object on the fly with the ref
+    const student = {
+      name: current.name.value,
+      age: current.age.value,
+      address: current.address.value,
+      gpa: current.gpa.value,
+      major: current.major.value,
+      image: current.image.value
+    }
+    // Axios here
+    let newStudent = await createStudent(student)
+    console.log(newStudent)
+    alert("New student added!")
+    window.location.href = '/'
+  }
+
+  const createStudent = async (student) => {
+
+    const { name, age, address, gpa, major, image } = student
+
+    if (!name || !age || !address || !gpa || !major || !image) return "Please fill out all input fields."
+
+    let res = axios.post('http://localhost:1800/api/students', student)
+      .then(res => {
+        return res
+      })
+      .catch(error => {
+        return error
+      })
+
+    return res
+
   }
 
   return (
-    <form className="addForm" action="/api/students" method="POST">
+    <form ref={formData} className="addForm">
       <div className="input-container">
         <label htmlFor="add-name">Name:</label>
-        <input onChange={(e) => handleChange(e)} type="text" id="add-name" name="name" value={data.name} />
+        <input type="text" id="add-name" name="name" />
         <label htmlFor="add-age">Age:</label>
         <input type="number" step="1" min="14" max="100" id="add-age" name="age" />
         <label htmlFor="add-address">Address:</label>
@@ -34,13 +59,14 @@ export const AddStudentForm = () => {
         <input type="text" id="add-image" name="image" />
       </div>
       <div className="submit-container">
-        <button className="submit" type="submit">Submit Change</button>
+        <button className="submit" type="submit" onClick={handleSubmit}>Submit Change</button>
       </div>
     </form>
   )
 }
 
 export const UpdateStudentForm = () => {
+
   return (
     <form className="updateForm" action="/api/students" method="POST">
       <div className="input-container">
@@ -67,14 +93,47 @@ export const UpdateStudentForm = () => {
 }
 
 export const DeleteStudentForm = () => {
+  const formData = useRef(null)
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    // Destructure current values from the ref
+    const { current } = formData
+    // Create a student object on the fly with the ref
+    const student = {
+      id: current.name.value
+    }
+    // Axios here
+    let deletedStudent = await deleteStudent(student)
+    console.log(deletedStudent)
+    alert("Student deleted!")
+    // window.location.href = '/'
+  }
+
+  const deleteStudent = async (student) => {
+
+    let { id } = student
+
+    let res = axios.delete('http://localhost:1800/api/students', student)
+      .then(res => {
+        return res
+      })
+      .catch(error => {
+        return error
+      })
+
+    return res
+
+  }
+
   return (
-    <form className="deleteForm" action="/api/students" method="POST">
+    <form ref={formData} className="deleteForm" action="/api/students" method="POST">
       <div className="input-container">
         <label htmlFor="delete-id">Student ID:</label>
-        <input type="text" maxLength="6" id="delete-id" />
+        <input type="text" maxLength="6" id="delete-id" name="id" />
       </div>
       <div className="submit-container">
-        <button className="submit" type="submit">Submit Change</button>
+        <button className="submit" type="submit" onClick={handleSubmit}>Submit Change</button>
       </div>
     </form>
   )

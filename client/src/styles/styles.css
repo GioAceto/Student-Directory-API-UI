@@ -19,6 +19,12 @@
           box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 900px) {
+  .app-container {
+    width: 100vw;
+  }
+}
+
 .app-container header {
   height: 80px;
   display: -webkit-box;
@@ -52,11 +58,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: #3d7dca;
+}
+
+@media screen and (max-width: 900px) {
+  .app-container-inner {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .app-container-inner .modify-container {
   width: 350px;
-  background-color: #3d7dca;
+}
+
+@media screen and (max-width: 900px) {
+  .app-container-inner .modify-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 .app-container-inner .modify-container .top-container {
@@ -65,6 +101,12 @@
   width: 325px;
   background-color: #dfe3ee;
   letter-spacing: 0.07rem;
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .top-container {
+    width: 100%;
+  }
 }
 
 .app-container-inner .modify-container .top-container h2 {
@@ -81,6 +123,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .top-container .choice-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .app-container-inner .modify-container .top-container .choice-container label {
@@ -117,6 +167,14 @@
           flex-direction: column;
 }
 
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .addForm,
+  .app-container-inner .modify-container .updateForm,
+  .app-container-inner .modify-container .deleteForm {
+    width: 100%;
+  }
+}
+
 .app-container-inner .modify-container .addForm .input-container,
 .app-container-inner .modify-container .updateForm .input-container,
 .app-container-inner .modify-container .deleteForm .input-container {
@@ -129,6 +187,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .addForm .input-container,
+  .app-container-inner .modify-container .updateForm .input-container,
+  .app-container-inner .modify-container .deleteForm .input-container {
+    width: 80%;
+  }
 }
 
 .app-container-inner .modify-container .addForm .input-container label,
@@ -165,6 +231,16 @@
           align-items: center;
 }
 
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .addForm .submit-container,
+  .app-container-inner .modify-container .updateForm .submit-container,
+  .app-container-inner .modify-container .deleteForm .submit-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .app-container-inner .modify-container .addForm .submit-container button,
 .app-container-inner .modify-container .updateForm .submit-container button,
 .app-container-inner .modify-container .deleteForm .submit-container button {
@@ -179,6 +255,14 @@
           transition-duration: 0.2s;
 }
 
+@media screen and (max-width: 700px) {
+  .app-container-inner .modify-container .addForm .submit-container button,
+  .app-container-inner .modify-container .updateForm .submit-container button,
+  .app-container-inner .modify-container .deleteForm .submit-container button {
+    width: 200px;
+  }
+}
+
 .app-container-inner .modify-container .addForm .submit-container button:hover,
 .app-container-inner .modify-container .updateForm .submit-container button:hover,
 .app-container-inner .modify-container .deleteForm .submit-container button:hover {
@@ -187,9 +271,29 @@
   background-color: #ACACAC;
 }
 
+.app-container-inner .modify-container .updateForm {
+  display: none;
+}
+
+.app-container-inner .modify-container .deleteForm {
+  display: none;
+}
+
 .app-container-inner .students-container {
   width: 350px;
   background-color: #dfe3ee;
+}
+
+@media screen and (max-width: 900px) {
+  .app-container-inner .students-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app-container-inner .students-container {
+    width: 100%;
+  }
 }
 
 .app-container-inner .students-container .profile {

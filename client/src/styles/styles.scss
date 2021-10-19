@@ -1,3 +1,5 @@
+@import './media-queries';
+
 $gray: #dfe3ee;
 $blue: #3d7dca;
 
@@ -14,6 +16,10 @@ $blue: #3d7dca;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+
+  @include medium {
+    width: 100vw;
+  }
 
   header {
     height: 80px;
@@ -36,10 +42,29 @@ $blue: #3d7dca;
     &-inner {
       display: flex;
       flex-direction: row;
+      background-color: $blue;
+
+    @include medium {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @include small {
+      width: 100%;
+      flex-direction: column;
+    }
 
     .modify-container {
       width: 350px;
-      background-color: $blue;
+
+      @include medium {
+      width: 50%;
+    }
+
+    @include small {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
 
       .top-container {
         margin: 0 auto;
@@ -47,6 +72,10 @@ $blue: #3d7dca;
         width: 325px;
         background-color: $gray;
         letter-spacing: 0.07rem;
+
+      @include small {
+        width: 100%;
+      }
 
         h2 {
           margin-bottom: 1rem;
@@ -58,6 +87,10 @@ $blue: #3d7dca;
           padding: 1rem;
           display: flex;
           align-items: center;
+
+          @include small {
+            justify-content: center;
+          }
 
           label {
             margin-right: 0.5rem;
@@ -90,11 +123,19 @@ $blue: #3d7dca;
         display: flex;
         flex-direction: column;
 
+      @include small {
+        width: 100%;
+      }
+
         .input-container {
           padding: 1rem;
           width: 200px;
           display: flex;
           flex-direction: column;
+
+          @include small {
+            width: 80%;
+          }
 
           label {
             margin-bottom: 0.2rem;
@@ -118,6 +159,10 @@ $blue: #3d7dca;
           justify-content: flex-end;
           align-items: center;
 
+          @include small {
+            justify-content: center;
+          }
+
           button {
             width: 150px;
             height: 2rem;
@@ -127,6 +172,10 @@ $blue: #3d7dca;
             box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
             transition-duration: 0.2s;
 
+            @include small {
+              width: 200px;
+            }
+
             &:hover {
               cursor: pointer;
               color: white;
@@ -135,11 +184,28 @@ $blue: #3d7dca;
           }
         }
       }
+      
+      .updateForm {
+        display: none;
+      }
+
+      .deleteForm {
+        display: none;
+      }
+
     }
 
     .students-container {
       width: 350px;
       background-color: $gray;
+
+    @include medium {
+      width: 50%;
+    }
+
+    @include small {
+        width: 100%;
+    }
 
         .profile {
           margin: 1rem auto 1rem auto;
