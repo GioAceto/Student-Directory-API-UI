@@ -99,22 +99,18 @@ export const DeleteStudentForm = () => {
     event.preventDefault()
     // Destructure current values from the ref
     const { current } = formData
-    // Create a student object on the fly with the ref
-    const student = {
-      id: current.name.value
-    }
-    // Axios here
-    let deletedStudent = await deleteStudent(student)
-    console.log(deletedStudent)
+
+    const studentID = current.id.value
+    console.log(studentID)
+
+    await deleteStudent(studentID)
+
     alert("Student deleted!")
-    // window.location.href = '/'
+    window.location.href = '/'
   }
 
-  const deleteStudent = async (student) => {
-
-    let { id } = student
-
-    let res = axios.delete('http://localhost:1800/api/students', student)
+  const deleteStudent = async (studentID) => {
+    let res = axios.delete(`http://localhost:1800/api/students/${studentID}`)
       .then(res => {
         return res
       })
