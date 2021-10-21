@@ -86,3 +86,5 @@ DELETE - Deletes a student currently in the database by Student ID # (which is t
 ## To View the Front End Locally
 
 http://localhost:3000/
+
+##### [Check out the previous version of this application built with Pug instead of React](https://github.com/GioAceto/Student-Directory-API)
