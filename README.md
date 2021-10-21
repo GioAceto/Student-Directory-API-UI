@@ -2,17 +2,17 @@
 
 ### [Demo this application](https://student-directory-api-ui.herokuapp.com/)
 
-## Objective
-The objective of this project was to create a full CRUD REST API for a student directory, as well as a frontend to render the information.
+## About This Application
 
-## Structure & Functionality
-This API utilizes a MySQL database to store the student information, as well as a Pug frontend for the rendering.
+### Objective
+The objective of this project was to create a CRUD REST API and UI for a student directory. The UI would need to incorporate a form that could be used to add, edit, and delete students from the database.
+
+### Structure & Functionality
+This API utilizes a Node + Express backend and MySQL database to store the student information. The frontend is built with the React.js library.
 
 The database contains a single table with 10 columns (id, name, age, address, gpa, major, image, createdAt, updatedAt, & deletedAt). The application uses the Sequelize ORM to connect to the database and it is then parsed into JSON format.
 
-The frontend of the application utilizes the Pug template-engine as well SCSS for styling. All images used are svgs saved within the assets folder of the repo.
-
-![Screen Capture GIF of student directory](public/assets/screen-capture.gif)
+![Screen Capture GIF of student directory](client/src/assets/screen-capture.gif)
 
 ## API Documentation
 
