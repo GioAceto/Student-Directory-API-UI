@@ -19,7 +19,7 @@ const StudentsContainer = () => {
         return (
           <div key={student.id} className="profile">
             <h2>{student.name}</h2>
-            <img className="avatar" src={require("../assets/" + student.image).default} alt="student pic"></img>
+            <img crossOrigin="anonymous" className="avatar" src={student.image} alt={student.name}></img>
             <div className="data-list">
               <h3>Age: {student.age}</h3>
               <h3>Home Address: {student.address}</h3>

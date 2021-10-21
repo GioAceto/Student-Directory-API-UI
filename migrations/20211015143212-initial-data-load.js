@@ -10,7 +10,7 @@ module.exports = {
         address: 'Salem, MA',
         gpa: '3.70',
         major: 'Biochemistry',
-        image: 'emily.svg'
+        image: 'https://i.imgur.com/hsN3xCu.png'
       },
       {
         name: 'Fiona',
@@ -18,7 +18,7 @@ module.exports = {
         address: 'Providence, RI',
         gpa: '3.82',
         major: 'Psychology',
-        image: 'fiona.svg'
+        image: 'https://i.imgur.com/cQLh9oH.png'
       },
       {
         name: 'Travis',
@@ -26,7 +26,7 @@ module.exports = {
         address: 'Keene, NH',
         gpa: '3.50',
         major: 'Mechanical Engineering',
-        image: 'travis.svg'
+        image: 'https://i.imgur.com/xFLGFzw.png'
       },
       {
         name: 'Chloe',
@@ -34,7 +34,7 @@ module.exports = {
         address: 'Bridgeport, CT',
         gpa: '3.28',
         major: 'Political Science',
-        image: 'chloe.svg'
+        image: 'https://i.imgur.com/iwR2j3X.png'
       },
       {
         name: 'Maya',
@@ -42,7 +42,7 @@ module.exports = {
         address: 'Boston, MA',
         gpa: '3.80',
         major: 'Graphic Design',
-        image: 'maya.svg'
+        image: 'https://i.imgur.com/XUinfsI.png'
       },
       {
         name: 'Michael',
@@ -50,7 +50,7 @@ module.exports = {
         address: 'Boston, MA',
         gpa: '3.70',
         major: 'Biology',
-        image: 'michael.svg'
+        image: 'https://i.imgur.com/HQjT8sg.png'
       },
       {
         name: 'Noah',
@@ -58,7 +58,7 @@ module.exports = {
         address: 'Portland, ME',
         gpa: '3.78',
         major: 'Civil Engineering',
-        image: 'noah.svg'
+        image: 'https://i.imgur.com/Wf2lsEz.png'
       },
       {
         name: 'Sarah',
@@ -66,7 +66,7 @@ module.exports = {
         address: 'Beverly, MA',
         gpa: '4.00',
         major: 'Biology',
-        image: 'sarah.svg'
+        image: 'https://i.imgur.com/pQyp1Of.png'
       },
       {
         name: 'Scott',
@@ -74,7 +74,7 @@ module.exports = {
         address: 'Philadelphia, PA',
         gpa: '3.40',
         major: 'Accounting',
-        image: 'scott.svg'
+        image: 'https://i.imgur.com/T59GiCG.png'
       },
       {
         name: 'Nadine',
@@ -82,7 +82,7 @@ module.exports = {
         address: 'Montreal, QC',
         gpa: '4.00',
         major: 'Biology',
-        image: 'nadine.svg'
+        image: 'https://i.imgur.com/ThSNGms.png'
       },
       {
         name: 'Salim',
@@ -90,7 +90,7 @@ module.exports = {
         address: 'Boston, MA',
         gpa: '3.75',
         major: 'Physics',
-        image: 'salim.svg'
+        image: 'https://i.imgur.com/Pwc2Fzh.png'
       },
       {
         name: 'Caleb',
@@ -98,7 +98,7 @@ module.exports = {
         address: 'Anaheim, CA',
         gpa: '3.20',
         major: 'Accounting',
-        image: 'caleb.svg'
+        image: 'https://i.imgur.com/3486LnK.png'
       }
     ])
   },
