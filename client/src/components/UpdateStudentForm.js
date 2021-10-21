@@ -22,23 +22,26 @@ const UpdateStudentForm = () => {
     let studentID = student.id
 
     await updateStudent(student, studentID)
-
-    alert("Student updated!")
     window.location.href = '/'
   }
 
   const updateStudent = async (student, studentID) => {
+    const { name, age, address, gpa, major, image, id } = student
 
-    let res = axios.put(`http://localhost:1800/api/students/${studentID}`, student)
-      .then(res => {
-        return res
-      })
-      .catch(error => {
-        return error
-      })
+    if (!name || !age || !address || !gpa || !major || !image || !id) {
+      return alert("Please fill out all input fields.")
+    } else {
 
-    return res
+      let res = axios.put(`http://localhost:1800/api/students/${studentID}`, student)
+        .then(res => {
+          return res
+        })
+        .catch(error => {
+          return error
+        })
 
+      return res
+    }
   }
 
   return (

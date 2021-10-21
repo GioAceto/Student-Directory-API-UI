@@ -13,22 +13,26 @@ const DeleteStudentForm = () => {
     console.log(studentID)
 
     await deleteStudent(studentID)
-
-    alert("Student deleted!")
     window.location.href = '/'
   }
 
   const deleteStudent = async (studentID) => {
-    let res = axios.delete(`http://localhost:1800/api/students/${studentID}`)
-      .then(res => {
-        return res
-      })
-      .catch(error => {
-        return error
-      })
+    const { id } = studentID
 
-    return res
+    if (!id) {
+      alert("Please fill out all input fields.")
+    } else {
 
+      let res = axios.delete(`http://localhost:1800/api/students/${studentID}`)
+        .then(res => {
+          return res
+        })
+        .catch(error => {
+          return error
+        })
+
+      return res
+    }
   }
 
   return (

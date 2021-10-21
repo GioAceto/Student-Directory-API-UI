@@ -20,26 +20,26 @@ const AddStudentForm = () => {
     // Axios here
     let newStudent = await createStudent(student)
     console.log(newStudent)
-    alert("New student added!")
     window.location.href = '/'
   }
 
   const createStudent = async (student) => {
-
     const { name, age, address, gpa, major, image } = student
 
-    if (!name || !age || !address || !gpa || !major || !image) return "Please fill out all input fields."
+    if (!name || !age || !address || !gpa || !major || !image) {
+      alert("Please fill out all input fields.")
+    } else {
 
-    let res = axios.post('http://localhost:1800/api/students', student)
-      .then(res => {
-        return res
-      })
-      .catch(error => {
-        return error
-      })
+      let res = axios.post('http://localhost:1800/api/students', student)
+        .then(res => {
+          return res
+        })
+        .catch(error => {
+          return error
+        })
 
-    return res
-
+      return res
+    }
   }
 
   return (
