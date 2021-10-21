@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { AddStudentForm, UpdateStudentForm, DeleteStudentForm } from '../forms'
+import AddStudentForm from './AddStudentForm'
+import UpdateStudentForm from './UpdateStudentForm'
+import DeleteStudentForm from './DeleteStudentForm'
 
 const RenderChoice = ({ formResult }) => {
   if (formResult === 'update') return <UpdateStudentForm />
