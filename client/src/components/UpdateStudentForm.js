@@ -9,17 +9,27 @@ const UpdateStudentForm = () => {
     // Destructure current values from the ref
     const { current } = formData
 
-    const studentID = current.id.value
-    console.log(studentID)
+    const student = {
+      name: current.name.value,
+      age: current.age.value,
+      address: current.address.value,
+      gpa: current.gpa.value,
+      major: current.major.value,
+      image: current.image.value,
+      id: current.id.value
+    }
 
-    await updateStudent(studentID)
+    let studentID = student.id
 
-    alert("Student deleted!")
+    await updateStudent(student, studentID)
+
+    alert("Student updated!")
     window.location.href = '/'
   }
 
-  const updateStudent = async (studentID) => {
-    let res = axios.update(`http://localhost:1800/api/students/${studentID}`)
+  const updateStudent = async (student, studentID) => {
+
+    let res = axios.put(`http://localhost:1800/api/students/${studentID}`, student)
       .then(res => {
         return res
       })
@@ -47,7 +57,7 @@ const UpdateStudentForm = () => {
         <label htmlFor="update-image">Image:</label>
         <input type="text" id="update-image" name="image" />
         <label htmlFor="update-id">Student ID:</label>
-        <input type="text" maxLength="6" id="update-id" />
+        <input type="text" maxLength="6" id="update-id" name="id" />
       </div>
       <div className="submit-container">
         <button className="submit" type="submit" onClick={handleSubmit} >Submit Change</button>
