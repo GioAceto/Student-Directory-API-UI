@@ -9,15 +9,19 @@ const DeleteStudentForm = () => {
     // Destructure current values from the ref
     const { current } = formData
 
+    const student = {
+      id: current.id.value
+    }
+
     const studentID = current.id.value
     console.log(studentID)
 
-    await deleteStudent(studentID)
+    await deleteStudent(student, studentID)
     window.location.href = '/'
   }
 
-  const deleteStudent = async (studentID) => {
-    const { id } = studentID
+  const deleteStudent = async (student, studentID) => {
+    const { id } = student
 
     if (!id) {
       alert("Please fill out all input fields.")
