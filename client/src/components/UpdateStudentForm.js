@@ -32,7 +32,7 @@ const UpdateStudentForm = () => {
       return alert("Please fill out all input fields.")
     } else {
 
-      let res = axios.put(`http://localhost:1800/api/students/${studentID}`, student)
+      let res = axios.put(`/api/students/${studentID}`, student)
         .then(res => {
           return res
         })

@@ -27,7 +27,7 @@ const DeleteStudentForm = () => {
       alert("Please fill out all input fields.")
     } else {
 
-      let res = axios.delete(`http://localhost:1800/api/students/${studentID}`)
+      let res = axios.delete(`/api/students/${studentID}`)
         .then(res => {
           return res
         })

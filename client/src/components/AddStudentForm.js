@@ -30,7 +30,7 @@ const AddStudentForm = () => {
       alert("Please fill out all input fields.")
     } else {
 
-      let res = axios.post('http://localhost:1800/api/students', student)
+      let res = axios.post('/api/students', student)
         .then(res => {
           return res
         })

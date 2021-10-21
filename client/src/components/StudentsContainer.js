@@ -6,7 +6,7 @@ const StudentsContainer = () => {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      let fetch = await axios.get('http://localhost:1800/api/students')
+      let fetch = await axios.get('/api/students')
 
       setStudent(fetch.data)
     }
