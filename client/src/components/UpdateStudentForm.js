@@ -57,7 +57,8 @@ const UpdateStudentForm = () => {
         <input type="number" step="0.01" min="0" max="4.00" id="update-gpa" name="gpa" />
         <label htmlFor="update-major">Major:</label>
         <input type="text" id="update-major" name="major" />
-        <label htmlFor="update-image">Image:</label>
+        <label htmlFor="update-image">Image URL:</label>
+        <label htmlFor="add-image" className="example">Example: http://student.png</label>
         <input type="text" id="update-image" name="image" />
         <label htmlFor="update-id">Student ID:</label>
         <input type="text" maxLength="6" id="update-id" name="id" />

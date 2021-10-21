@@ -55,7 +55,8 @@ const AddStudentForm = () => {
         <input type="number" step="0.01" min="0" max="4.00" id="add-gpa" name="gpa" />
         <label htmlFor="add-major">Major:</label>
         <input type="text" id="add-major" name="major" />
-        <label htmlFor="add-image">Image:</label>
+        <label htmlFor="add-image">Image URL:</label>
+        <label htmlFor="add-image" className="example">Example: http://student.png</label>
         <input type="text" id="add-image" name="image" />
       </div>
       <div className="submit-container">
